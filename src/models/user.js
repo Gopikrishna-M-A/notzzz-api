@@ -28,6 +28,15 @@ const userSchema = new mongoose.Schema({
   downloads: {
     type: Number,
     default: 0,
+  },
+  semester:{
+    type: String,
+    default: '1'
+  },
+  branch:{
+    type: String,
+    default: 'Computer Science and Engineering'
+
   }
 });
 
