@@ -42,7 +42,8 @@ export const getAllCreators = async (req, res) => {
     const creators = await User.find({ creator: true });
     res.status(200).json(creators);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error(error);  // Log the error for debugging
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
 
@@ -203,3 +204,11 @@ export const addDownloads = async (req, res) => {
 };
 
 
+export const getTopCreators = async (req, res) => {
+  try {
+    const creators = await User.find({ creator: true });
+    res.status(200).json(creators);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

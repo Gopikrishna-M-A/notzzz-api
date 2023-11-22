@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import { getUser, getAllUsers, getUserByEmail, addUser, deleteUser, updateUser, getAllCreators, getInfo, addRating, addDownloads }  from '../controllers/user.js';
+import { getUser, getAllUsers, getUserByEmail, addUser, deleteUser, updateUser, getAllCreators, getInfo, addRating, addDownloads, getTopCreators }  from '../controllers/user.js';
 
 
 router.get("/:id", getUser)
@@ -16,5 +16,8 @@ router.get("/info/:userId", getInfo)
 router.post("/:userId/ratings", addRating)
 
 router.post("/:userId/downloads", addDownloads)
+
+router.get("/top-creators", getTopCreators)
+
 
 export default router;

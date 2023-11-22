@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema({
     min: 0,
     max: 5,  
   },
+  avatar:{
+    type: String,
+    default:'girl1'
+  },
   ratings: [
     {
       type: Number,
